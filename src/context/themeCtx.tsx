@@ -1,7 +1,11 @@
-import { ReactNode, useCallback, useReducer, useMemo } from "react";
-import { FC } from "react";
-import styled from "styled-components";
-import { createContext } from "vm";
+import {
+  ReactNode,
+  useCallback,
+  useReducer,
+  useMemo,
+  createContext,
+  FC,
+} from "react";
 
 interface IThemeState {
   isDark: boolean;
@@ -16,7 +20,7 @@ type TThemeAction = {
 };
 
 export const ThemeContext = createContext(initialState);
-ThemeContext.displayName = ThemeContext;
+ThemeContext.displayName = "ThemeContext";
 
 const themeReducer = (
   state: IThemeState,
@@ -43,7 +47,7 @@ export const ThemeModeProvider: FC<{
     [state, toggleTheme]
   );
   return (
-    <ThemeContext.provider value={value} {...props}></ThemeContext.provider>
+    <ThemeContext.Provider value={value} {...props}></ThemeContext.Provider>
   );
 };
 

@@ -1,4 +1,4 @@
-import ThemeProvider from "styled-components";
+import { ThemeModeProvider } from "./context/themeCtx";
 import styled from "styled-components";
 
 const Heding = styled.h1`
